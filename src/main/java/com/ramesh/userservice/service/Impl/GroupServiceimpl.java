@@ -19,7 +19,7 @@ public class GroupServiceimpl implements GroupService {
     @Override
     @Transactional
     public Group save(Group group) {
-        return  groupRepository.saveAndFlush(group);
+        return  groupRepository.save(group);
     }
 
     @Override
@@ -27,5 +27,15 @@ public class GroupServiceimpl implements GroupService {
     @Fetch(FetchMode.JOIN)
     public List<Group> getAll() {
         return groupRepository.findAll();
+    }
+
+    @Override
+    public Group getGroup(long groupId) {
+        return groupRepository.findByGroupId(groupId);
+    }
+
+    @Override
+    public Group getGroupByName(String groupName) {
+        return groupRepository.findByGroupName(groupName);
     }
 }

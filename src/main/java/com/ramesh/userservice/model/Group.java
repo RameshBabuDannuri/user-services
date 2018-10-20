@@ -28,6 +28,7 @@ public class Group {
                joinColumns = @JoinColumn(name = "group_id"),
                inverseJoinColumns = @JoinColumn(name = "profile_id"))
     //@JsonManagedReference
+    @JsonIgnore
     private List<User> users;
 
     public Group() {

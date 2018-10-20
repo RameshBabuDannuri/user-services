@@ -7,4 +7,8 @@ import java.util.List;
 public interface GroupService {
     Group save(Group group);
     List<Group> getAll();
+
+    Group getGroup(long groupId);
+
+    Group getGroupByName(String groupName);
 }
